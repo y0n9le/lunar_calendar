@@ -38,6 +38,7 @@ for year in range(1900, 2101):  # 1900-2100年
                     event.add('summary', event_name)  # 活动名称
                     event.add('dtstart', solar_date)  # 开始日期
                     event.add('dtend', solar_date + timedelta(days=1))  # 结束日期
+                    event.add('dtstamp', datetime.now()) # 创建时间
                     cal.add_component(event)
                 except ValueError:
                     continue  # 跳过不存在的日期
